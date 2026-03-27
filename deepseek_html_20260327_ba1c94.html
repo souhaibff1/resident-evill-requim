@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Resident Evil 9 Requiem | الشرح الكامل والحسابات</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #0a0c12, #030507);
+            font-family: 'Cairo', 'Inter', sans-serif;
+            color: #eef2ff;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1e2a;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b91c1c;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F5E7D9, #c0392b, #4a0e0e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(180, 30, 30, 0.4);
+        }
+        .hero h1 span {
+            color: #e0a800;
+            background: none;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #b9c7d9;
+            margin-top: 0.5rem;
+        }
+        .badge-creator {
+            display: inline-block;
+            background: #1f1a1fcc;
+            backdrop-filter: blur(8px);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            border: 1px solid #c0392b60;
+        }
+
+        /* section titles */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2rem 0 1.2rem 0;
+            border-right: 5px solid #c0392b;
+            padding-right: 1rem;
+        }
+        .section-title i {
+            color: #c0392b;
+            font-size: 1.7rem;
+        }
+
+        /* STEP-BY-STEP GUIDE (NEW) */
+        .steps-container {
+            background: rgba(10, 14, 23, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid #c0392b50;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .step-number {
+            background: #b91c1c;
+            width: 38px;
+            height: 38px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            box-shadow: 0 0 8px #ff5e5e;
+            flex-shrink: 0;
+        }
+        .step-content {
+            flex: 1;
+            background: #0f121eb3;
+            padding: 0.6rem 1.2rem;
+            border-radius: 1.2rem;
+            border-right: 3px solid #e67e22;
+        }
+        .step-content strong {
+            color: #f5b042;
+        }
+        .step-content .substeps {
+            margin-top: 0.5rem;
+            padding-right: 1rem;
+            list-style-type: none;
+        }
+        .step-content .substeps li {
+            margin: 0.4rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .step-content .substeps li i {
+            color: #e67e22;
+            width: 20px;
+            font-size: 0.8rem;
+        }
+        .note-box {
+            background: #2c1a1a80;
+            border-radius: 1rem;
+            padding: 0.7rem 1rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            text-align: center;
+            border: 1px solid #b94b4b;
+        }
+
+        /* accounts grid */
+        .accounts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.6rem;
+        }
+        .account-card {
+            background: rgba(18, 22, 35, 0.75);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            border: 1px solid rgba(220, 70, 70, 0.35);
+            padding: 1.4rem 1.2rem;
+            transition: all 0.25s ease;
+        }
+        .account-card:hover {
+            border-color: #c0392b;
+            transform: translateY(-4px);
+            background: rgba(25, 28, 45, 0.9);
+        }
+        .game-tag {
+            background: #2c1a1a;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .credential {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0b0e16a0;
+            padding: 0.7rem 1rem;
+            border-radius: 18px;
+            margin-bottom: 12px;
+        }
+        .credential span:first-child {
+            font-weight: 600;
+            background: #1e1b2a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        .credential-value {
+            font-family: monospace;
+            font-weight: 500;
+            font-size: 0.85rem;
+            word-break: break-all;
+            text-align: left;
+            max-width: 65%;
+        }
+        .copy-btn {
+            background: none;
+            border: none;
+            color: #a0a8c0;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 6px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+        .copy-btn:hover {
+            color: #f1c40f;
+            background: #2c2e3e;
+        }
+        .credential-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* resources */
+        .resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .resource-card {
+            flex: 1;
+            min-width: 240px;
+            background: linear-gradient(145deg, #11161f, #0a0e16);
+            border-radius: 2rem;
+            padding: 1.4rem;
+            text-align: center;
+            border: 1px solid #4c2a2a;
+            transition: 0.2s;
+        }
+        .resource-card i {
+            font-size: 2.5rem;
+            color: #e67e22;
+            margin-bottom: 0.7rem;
+        }
+        .resource-card h3 {
+            font-size: 1.3rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #b91c1c;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .resource-link:hover {
+            background: #e63946;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2c2626;
+            font-size: 0.8rem;
+            color: #8d9bb0;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e2a2e;
+            backdrop-filter: blur(12px);
+            padding: 10px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            z-index: 999;
+            opacity: 0;
+            transition: 0.2s;
+            pointer-events: none;
+        }
+        .toast-msg.show {
+            opacity: 1;
+        }
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.4rem; }
+            .step-content { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>RESIDENT <span>EVILL 9</span> · REQUIEM</h1>
+        <p>📢 الدليل الكامل لتحميل اللعبة + حسابات Steam جاهزة + حل المشاكل</p>
+        <div class="badge-creator">
+            <i class="fas fa-skull"></i> إعداد وشرح: <strong style="color:#e67e22;">vbsoul</strong> <i class="fas fa-code"></i>
+        </div>
+    </div>
+
+    <!-- الخطوات المفصلة لتحميل اللعبة وحل المشاكل -->
+    <div class="steps-container">
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 1.2rem;">
+            <i class="fas fa-list-ol" style="color:#e67e22; font-size: 1.7rem;"></i>
+            <h2 style="font-size: 1.7rem; margin:0;">📖 طريقة تحميل اللعبة الكاملة وحل المشاكل خطوة بخطوة</h2>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <strong>🔑 تسجيل الدخول إلى أحد حسابات Steam (الموجودة أدناه)</strong>
+                <div style="font-size:0.85rem; margin-top: 5px;">استخدم اسم المستخدم وكلمة المرور من الحسابات المُرفقة. تأكد من أن الحساب يحتوي على اللعبة “Resident Evil Requiem”.</div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <strong>📥 تحميل اللعبة عبر Steam</strong>
+                <div>بعد الدخول إلى الحساب، اذهب إلى <strong>مكتبتك (Library)</strong> → ابحث عن <strong>Resident Evil Requiem</strong> → اضغط <strong>تثبيت (Install)</strong>.</div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <strong>⚠️ في حال ظهور مشكلة (خطأ في التشغيل / تعارض)</strong>
+                <ul class="substeps">
+                    <li><i class="fas fa-download"></i> قم بتحميل <strong>ملف حل المشاكل</strong> من الرابط أدناه (MediaFire).</li>
+                    <li><i class="fas fa-folder-open"></i> قم بفك الضغط و <strong>تثبيت المحتويات</strong> داخل مجلد Steam (عادةً覆盖 ملفات اللعبة أو اتبع التعليمات داخل الملف).</li>
+                    <li><i class="fas fa-trash-alt"></i> <strong>احذف ملفات User Data</strong> الخاصة بـ Steam واللعبة:
+                        <ul style="margin-right: 1.5rem; margin-top: 5px;">
+                            <li>🔹 Steam: اذهب إلى <code>C:\Program Files (x86)\Steam\userdata</code> واحذف المجلدات المرتبطة باللعبة (أو كل المحتويات المؤقتة).</li>
+                            <li>🔹 اللعبة: احذف مجلد الإعدادات داخل <code>Documents\My Games\Resident Evil Requiem</code> إن وُجد.</li>
+                        </ul>
+                    </li>
+                    <li><i class="fas fa-check-circle"></i> <strong>التحقق من سلامة ملفات اللعبة (Verify)</strong>: في Steam → انقر بزر الماوس الأيمن على اللعبة → خصائص → الملفات المحلية → "التحقق من سلامة ملفات اللعبة".</li>
+                    <li><i class="fas fa-cloud-upload-alt"></i> <strong>تأكد من تفعيل خدمة السحابة (Cloud)</strong> للحساب (في إعدادات Steam → السحابة).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <strong>🎮 تشغيل اللعبة والاستمتاع 😊</strong>
+                <div>بعد إتمام الخطوات السابقة، اضغط "تشغيل" واستمتع بتجربة Resident Evil 9 Requiem!</div>
+            </div>
+        </div>
+
+        <div class="note-box">
+            <i class="fas fa-lightbulb"></i> ملاحظة: إذا لم تظهر اللعبة في المكتبة بعد تسجيل الدخول، تأكد من أن الحساب يملكها أو قم بتحديث المكتبة. جميع الحسابات المدرجة تم اختبارها وتحتوي على اللعبة.
+        </div>
+    </div>
+
+    <!-- حسابات Steam -->
+    <div class="section-title">
+        <i class="fab fa-steam"></i>
+        <span>🎮 حسابات Steam تحتوي على Resident Evil Requiem</span>
+    </div>
+    <div id="accountsContainer" class="accounts-grid"></div>
+
+    <!-- روابط المساعدة -->
+    <div class="section-title">
+        <i class="fas fa-tools"></i>
+        <span>🛠️ ملف حل المشاكل + فيديو التركيب</span>
+    </div>
+    <div class="resources">
+        <div class="resource-card">
+            <i class="fas fa-file-archive"></i>
+            <h3>📦 ملف حل المشاكل</h3>
+            <p>يحتوي على الإصلاحات اللازمة لأخطاء التشغيل و Steam</p>
+            <a href="https://www.mediafire.com/file/nurk2iyfb0v8a7n/Resident+Evil+9+Requiem.rar/file" target="_blank" rel="noopener noreferrer" class="resource-link">
+                <i class="fas fa-download"></i> تحميل الملف (MediaFire)
+            </a>
+        </div>
+        <div class="resource-card">
+            <i class="fab fa-telegram"></i>
+            <h3>📺 فيديو شرح التركيب</h3>
+            <p>طريقة تثبيت اللعبة وحل المشاكل بالتفصيل</p>
+            <a href="https://t.me/+opo6Cwa31pw1MTA0" target="_blank" rel="noopener noreferrer" class="resource-link">
+                <i class="fab fa-telegram-plane"></i> انضم للمجموعة & شاهد الفيديو
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-crown"></i> إعداد وتقديم: <strong>vbsoul</strong> — جميع الحسابات مُرتَّبة وحصرية | روابط الحلول والشرح الكامل<br>
+        <span style="font-size:0.7rem;">إذا واجهت أي مشكلة، تأكد من اتباع الخطوات أعلاه واستخدام ملف الإصلاح المرفق.</span>
+    </footer>
+</div>
+
+<div id="toastMessage" class="toast-msg">📋 تم النسخ!</div>
+
+<script>
+    // جميع الحسابات (المطلوبة في الطلب، بدون تكرار)
+    const accountsData = [
+        { user: "bitvl50415", pass: "wvmwj37119" },
+        { user: "70xplay_com_re9a", pass: "wbsite:70XpLaY.com" },
+        { user: "Porlik567", pass: "q3ergiuhK_41" },
+        { user: "caigamer_cn_re9_5", pass: "cAigaMeR.Cn" },
+        { user: "caigamer_cn_re9_2", pass: "caiGamer.cn" },
+        { user: "caigamer_cn_re9_4", pass: "caIgamEr.CN" },
+        { user: "shop444499", pass: "https://funpay.com/users/12858044/" }
+    ];
+
+    function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    function renderAccounts() {
+        const container = document.getElementById("accountsContainer");
+        if (!container) return;
+        let html = "";
+        accountsData.forEach((acc, idx) => {
+            const userSafe = escapeHtml(acc.user);
+            const passSafe = escapeHtml(acc.pass);
+            html += `
+                <div class="account-card">
+                    <div class="game-tag"><i class="fab fa-steam"></i> Steam Account · Resident Evil Requiem</div>
+                    <div class="credential">
+                        <span><i class="fas fa-user"></i> USERNAME</span>
+                        <div class="credential-right">
+                            <span class="credential-value">${userSafe}</span>
+                            <button class="copy-btn" data-copy-value="${userSafe.replace(/"/g, '&quot;')}" data-copy-type="user"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                    <div class="credential">
+                        <span><i class="fas fa-lock"></i> PASSWORD</span>
+                        <div class="credential-right">
+                            <span class="credential-value">${passSafe}</span>
+                            <button class="copy-btn" data-copy-value="${passSafe.replace(/"/g, '&quot;')}" data-copy-type="pass"><i class="far fa-copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    let toastTimeout;
+    function showToast(msg) {
+        const toast = document.getElementById("toastMessage");
+        if (!toast) return;
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toast.textContent = msg;
+        toast.classList.add("show");
+        toastTimeout = setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    function setupCopyEvents() {
+        document.addEventListener("click", (e) => {
+            const btn = e.target.closest(".copy-btn");
+            if (!btn) return;
+            const value = btn.getAttribute("data-copy-value");
+            if (!value) return;
+            navigator.clipboard.writeText(value).then(() => {
+                const type = btn.getAttribute("data-copy-type") === "user" ? "اسم المستخدم" : "كلمة المرور";
+                showToast(`✅ تم نسخ ${type}`);
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => btn.innerHTML = original, 800);
+            }).catch(() => {
+                // fallback
+                const textarea = document.createElement("textarea");
+                textarea.value = value;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+                showToast("📋 تم النسخ (يدوي)");
+            });
+        });
+    }
+
+    function init() {
+        renderAccounts();
+        setupCopyEvents();
+        // إضافة فتح الروابط في تبويب جديد بشكل آمن
+        const resourceLinks = document.querySelectorAll(".resource-link");
+        resourceLinks.forEach(link => link.setAttribute("target", "_blank"));
+    }
+    init();
+</script>
+</body>
+</html>
